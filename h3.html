@@ -128,11 +128,23 @@
             font-weight: 600;
         }
 
+        @media (max-width: 480px) {
+            .announcement-section .sub-title {
+                font-size: 0.9rem;
+            }
+        }
+
         .announcement-section .main-names {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(2.5rem, 6vw, 3.5rem);
             color: var(--accent-color);
             margin: 1rem 0;
+        }
+
+        @media (max-width: 480px) {
+            .announcement-section .main-names {
+                font-size: 2rem;
+            }
         }
 
         .couple-images-grid {
@@ -625,7 +637,7 @@
         <div class="announcement-section">
             <div class="label">Trân trọng báo tin</div>
             <div class="sub-title">LỄ VU QUY CỦA HAI CON CHÚNG TÔI</div>
-            <div class="main-names">Tường Vy&nbsp;&nbsp;&nbsp;&amp;&nbsp;&nbsp;&nbsp;Gia Bảo</div>
+            <div class="main-names">Tường Vy&nbsp;&nbsp;&amp;&nbsp;&nbsp;Gia Bảo</div>
 
             <div class="couple-images-grid">
                 <div class="couple-img-item">
@@ -722,10 +734,8 @@
             "https://i.ibb.co/qYwW7VqP/a5.jpg",
             "https://i.ibb.co/PvqCPd0V/a6.jpg",
             "https://i.ibb.co/PvT0NXQP/a8.jpg",
-            "https://i.ibb.co/MxfsybQ2/a9.jpg",
-            "https://i.ibb.co/0RvYNgD9/a10.jpg",
-            "https://i.ibb.co/dJm5QZgv/b4.jpg",
-            "https://i.ibb.co/t957rF1/b5.jpg",
+
+
         ];
         const ALL_IMAGE = [
             "https://i.ibb.co/XrRVwHnM/b1.jpg",
@@ -737,10 +747,10 @@
 
         // --- CẤU HÌNH NHẠC ---
         const MUSIC_LIST = [
-            "https://stream.nct.vn/Sony_Audio118/EmDongYIDo-DucPhucx911-9034315.mp3?st=eWv7ds1DweuEVRA15rxVZQ&e=1775996944&a=6&p=0&r=eab29dfacde6058a08e28133287c4d54%22,%22https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3",
+            // "https://stream.nct.vn/Sony_Audio118/EmDongYIDo-DucPhucx911-9034315.mp3?st=eWv7ds1DweuEVRA15rxVZQ&e=1775996944&a=6&p=0&r=eab29dfacde6058a08e28133287c4d54%22,%22https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3",
             "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3",
-            "https://www.chosic.com/wp-content/uploads/2021/07/Beautiful-Piano.mp3", // Link dự phòng ổn định
-            "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3"
+            // "https://www.chosic.com/wp-content/uploads/2021/07/Beautiful-Piano.mp3", // Link dự phòng ổn định
+            // "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3"
         ];
 
         let isPlaying = false;
