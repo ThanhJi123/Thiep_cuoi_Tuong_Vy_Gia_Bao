@@ -276,14 +276,17 @@
 
     <script>
 
-        const params = new URLSearchParams(window.location.search);
-        let name = params.get("name");
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            let name = params.get("name");
 
-        if (name && name.trim() !== "") {
-            document.getElementById("guestName").innerText = name;
-        } else {
-            document.getElementById("guestName").innerText = "Quý khách";
-        }
+            if (name && name.trim() !== "") {
+                name = decodeURIComponent(name);   // chuyển %20 thành dấu cách
+                document.getElementById("guestName").innerText = name;
+            } else {
+                document.getElementById("guestName").innerText = "Quý khách";
+            }
+        });
 
         const openBtn = document.getElementById("openBtn");
         const card = document.getElementById("card");
