@@ -8,21 +8,21 @@
         rel="stylesheet">
     <title>Thiệp Cưới</title>
 
-    <!-- HTML Meta Tags -->
     <title>Thiệp Cưới Tường Vy & Gia Bảo</title>
     <meta name="description" content="Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi">
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://thanhji123.github.io/Thiep_cuoi_Tuong_Vy_Gia_Bao/">
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thanhji123.github.io/Thiep_cuoi_Tuong_Vy_Gia_Bao/">
     <meta property="og:title" content="Thiệp Cưới Tường Vy & Gia Bảo">
     <meta property="og:description" content="Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi">
     <meta property="og:image" content="https://i.ibb.co/t957rF1/b5.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Thiệp Cưới">
 
-    <!-- Twitter Meta Tags -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="thanhji123.github.io">
-    <meta property="twitter:url" content="https://thanhji123.github.io/Thiep_cuoi_Tuong_Vy_Gia_Bao/">
     <meta name="twitter:title" content="Thiệp Cưới Tường Vy & Gia Bảo">
     <meta name="twitter:description" content="Trân trọng kính mời bạn đến tham dự lễ cưới của chúng tôi">
     <meta name="twitter:image" content="https://i.ibb.co/t957rF1/b5.jpg">
@@ -254,7 +254,11 @@
             <em>&</em>
             <span>Gia Bảo</span>
         </div>
-        <p>Trân trọng kính mời bạn đến dự buổi tiệc của chúng mình</p>
+        <p>
+            Trân trọng kính mời
+            <span id="guestName">Quý khách</span>
+            đến dự buổi tiệc của chúng mình
+        </p>
         <a href="#" class="button-link" id="openBtn">Mở thiệp cưới</a>
     </div>
 
@@ -271,6 +275,16 @@
     <div class="hearts" id="hearts"></div>
 
     <script>
+
+        const params = new URLSearchParams(window.location.search);
+        let name = params.get("name");
+
+        if (name && name.trim() !== "") {
+            document.getElementById("guestName").innerText = name;
+        } else {
+            document.getElementById("guestName").innerText = "Quý khách";
+        }
+
         const openBtn = document.getElementById("openBtn");
         const card = document.getElementById("card");
         const envelope = document.getElementById("envelope");
