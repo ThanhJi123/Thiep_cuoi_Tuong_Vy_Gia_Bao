@@ -9,11 +9,15 @@
         rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FEF8F5;
-            --primary-color: #A36B4F;
-            --accent-color: #E29578;
+            --bg-color: #F6F8F4;
+            --bg-color2: #F9FAFB;
+            --bg-color3: #FFFAF7;
+            --primary-color: #4E6B50;
+            --accent-color: #9DB89B;
             --text-color: #4A4A4A;
             --card-bg: #FFFFFF;
+            --name-color: #3E4C1D;
+            --text-cl: #576225;
         }
 
         body {
@@ -22,20 +26,141 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at top, #FFF0E5 0%, #FCEADE 40%, #F5D5C6 100%);
             font-family: 'Quicksand', sans-serif;
             color: var(--text-color);
             padding: 20px 0;
             box-sizing: border-box;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image: url("https://www.transparenttextures.com/patterns/paper.png");
+            opacity: 0.25;
+
+            pointer-events: none;
+        }
+
         .invitation {
             width: min(800px, 95vw);
-            background: var(--card-bg);
+            background-color: #F6F8F4;
+
+            background-image:
+                url("https://www.transparenttextures.com/patterns/paper.png");
             border-radius: 30px;
             box-shadow: 0 20px 50px rgba(163, 107, 79, 0.15);
             overflow: hidden;
             position: relative;
+        }
+
+        .flower {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background-image: url("https://chungdoi.com/images/themes/moclan-white/hoa.webp");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 99999;
+        }
+
+        .flower1 {
+            width: 500px;
+            height: 500px;
+            top: -70px;
+            left: -100px;
+        }
+
+        .flower2 {
+            width: 400px;
+            height: 400px;
+            top: 450px;
+            right: -50px;
+            z-index: 0;
+        }
+
+        .flower3 {
+            width: 300px;
+            height: 300px;
+            top: 2400px;
+            right: -50px;
+            z-index: 0;
+        }
+
+        .flower4 {
+            width: 500px;
+            height: 500px;
+            top: 3000px;
+            left: -50px;
+            z-index: 0;
+        }
+
+        .flower5 {
+            width: 500px;
+            height: 500px;
+            top: 3600px;
+            right: -100px;
+            z-index: 0;
+        }
+
+        .flower6 {
+            width: 500px;
+            height: 500px;
+            top: 4500px;
+            left: -70px;
+            z-index: 0;
+        }
+
+        @media (max-width: 600px) {
+            .flower1 {
+                width: 300px;
+                height: 300px;
+                top: -50px;
+                left: -30px;
+            }
+
+            .flower2 {
+                width: 300px;
+                height: 300px;
+                top: 530px;
+                right: -50px;
+                z-index: 0;
+            }
+
+            .flower3 {
+                width: 250px;
+                height: 250px;
+                top: 2150px;
+                right: -55px;
+                z-index: 0;
+            }
+
+            .flower4 {
+                width: 500px;
+                height: 500px;
+                top: 2500px;
+                left: -50px;
+                z-index: 0;
+            }
+
+            .flower5 {
+                width: 220px;
+                height: 220px;
+                top: 3450px;
+                right: -50px;
+                z-index: 0;
+            }
+
+            .flower6 {
+                width: 500px;
+                height: 500px;
+                top: 4090px;
+                left: -75px;
+                z-index: 0;
+            }
         }
 
         /* --- 1. HERO SECTION --- */
@@ -82,6 +207,8 @@
             color: var(--accent-color);
             font-weight: 700;
             margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 10;
         }
 
         .family-grid {
@@ -93,8 +220,8 @@
         }
 
         .family-card {
-            background: #FFFAF7;
-            border: 1px solid rgba(163, 107, 79, 0.15);
+            background-color: #FFFFFF;
+            border: 1.5px solid var(--accent-color);
             border-radius: 16px;
             padding: 1.5rem;
         }
@@ -109,7 +236,7 @@
 
         .family-card .parent-name {
             font-weight: 600;
-            color: #333;
+            color: var(--name-color);
             font-size: 1.05rem;
             margin: 2px 0;
         }
@@ -118,7 +245,6 @@
         .announcement-section {
             padding: 2rem;
             text-align: center;
-            background-color: #fff;
         }
 
         .announcement-section .sub-title {
@@ -172,7 +298,6 @@
 
         /* --- 3. LỄ THÀNH HÔN & TIỆC MỪNG --- */
         .timeline-section {
-            background: #FFF9F6;
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -198,10 +323,12 @@
         .date-divider {
             width: 1px;
             height: 40px;
-            background-color: rgba(163, 107, 79, 0.3);
+            background-color: rgba(120, 140, 118, 0.3);
         }
 
         .party-box {
+            position: relative;
+            z-index: 10;
             max-width: 500px;
             margin: 0 auto;
             border: 1.5px solid var(--accent-color);
@@ -215,7 +342,6 @@
         .calendar-section {
             padding: 3.5rem 2rem;
             text-align: center;
-            background-color: #FFFFFF;
         }
 
         .calendar-section .label {
@@ -237,10 +363,12 @@
         .calendar-container {
             max-width: 350px;
             margin: 0 auto 2.5rem;
-            background: #FFFAF7;
+            background: var(--bg-color);
             padding: 1.5rem;
             border-radius: 20px;
             border: 1px solid rgba(163, 107, 79, 0.1);
+            position: relative;
+            z-index: 10;
         }
 
         .calendar-grid {
@@ -263,11 +391,11 @@
 
         .calendar-grid .day-header {
             color: var(--primary-color);
-            border-bottom: 1px solid rgba(163, 107, 79, 0.2);
+            border-bottom: 1px solid rgba(120, 140, 118, 0.25);
         }
 
         .calendar-grid .wedding-day {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FCEADE'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238FAE8B'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -297,6 +425,8 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 10;
         }
 
         .map-container iframe {
@@ -308,7 +438,6 @@
         /* --- 5. GALLERY SLIDESHOW --- */
         .gallery-section {
             padding: 3rem 2rem;
-            background-color: #FFF9F6;
         }
 
         .slides {
@@ -378,7 +507,8 @@
         .footer-note {
             padding: 5rem 2rem 3rem;
             text-align: center;
-            background: linear-gradient(to top, #FFFBF9, #FFF0E5);
+            position: relative;
+            z-index: 10;
         }
 
         .footer-note .note-line {
@@ -399,7 +529,9 @@
         /* --- 7. ALBUM ẢNH DƯỚI LỜI CẢM ƠN --- */
         .bottom-album {
             padding: 0 2rem 4rem;
-            background-color: #FFFBF9;
+            /* background-color: #FFFBF9; */
+            position: relative;
+            z-index: 10;
         }
 
         .album-grid {
@@ -567,8 +699,6 @@
             margin-top: 1.5rem;
             border-radius: 28px;
             overflow: hidden;
-            background-color: #FFFAF7;
-            box-shadow: 0 16px 40px rgba(97, 41, 87, 0.1);
             min-height: 600px;
             padding: 3rem 1.5rem 2.8rem;
             display: grid;
@@ -584,7 +714,6 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.35;
             /* chỉnh độ nhạt ở đây */
             z-index: 0;
         }
@@ -630,6 +759,103 @@
             color: #3E4C1D;
             line-height: 1;
         }
+
+        /* --- Floating Animation cho hoa --- */
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: rotate(180deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotate(180deg) translateY(-30px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: rotate(-10deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotate(-10deg) translateY(-25px);
+            }
+        }
+
+        @keyframes float3 {
+
+            0%,
+            100% {
+                transform: rotate(-80deg) translateY(0px);
+            }
+
+            50% {
+                transform: rotate(-80deg) translateY(-20px);
+            }
+        }
+
+        @keyframes float4 {
+
+            0%,
+            100% {
+                transform: scaleX(-1) rotate(-30deg) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) rotate(-30deg) translateY(-28px);
+            }
+        }
+
+        @keyframes float5 {
+
+            0%,
+            100% {
+                transform: scaleX(-1) rotate(90deg) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) rotate(90deg) translateY(-32px);
+            }
+        }
+
+        @keyframes float6 {
+
+            0%,
+            100% {
+                transform: scaleX(-1) rotate(0deg) translateY(0px);
+            }
+
+            50% {
+                transform: scaleX(-1) rotate(0deg) translateY(-26px);
+            }
+        }
+
+        .flower1 {
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .flower2 {
+            animation: float2 7s ease-in-out infinite;
+        }
+
+        .flower3 {
+            animation: float3 8s ease-in-out infinite;
+        }
+
+        .flower4 {
+            animation: float4 6.5s ease-in-out infinite;
+        }
+
+        .flower5 {
+            animation: float5 7.5s ease-in-out infinite;
+        }
+
+        .flower6 {
+            animation: float6 8.5s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -642,6 +868,13 @@
             <div class="name">Gia Bảo</div>
         </div> -->
 
+        <div class="flower flower1 layer1"></div>
+        <div class="flower flower2 layer2"></div>
+        <div class="flower flower3 layer3"></div>
+        <div class="flower flower4 layer4"></div>
+        <div class="flower flower5 layer5"></div>
+        <div class="flower flower6 layer6"></div>
+
         <div class="name-card">
             <div class="name-card-inner">
                 <div class="title">THE WEDDING OF</div>
@@ -653,7 +886,7 @@
 
         <div class="gallery-section">
             <h2
-                style="text-align: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--primary-color);">
+                style="text-align: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--text-cl);">
                 Album ảnh cưới</h2>
             <div class="slides" id="slides"></div>
             <div class="thumbs" id="thumbs"></div>
@@ -805,9 +1038,9 @@
 
         // --- CẤU HÌNH NHẠC ---
         const MUSIC_LIST = [
-            "https://thanhji123.github.io/profile/nhac/ngay_dau_tien_cut.mp3",
-            "https://thanhji123.github.io/profile/nhac/em_dong_y.mp3",
-            "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3",
+            // "https://thanhji123.github.io/profile/nhac/ngay_dau_tien_cut.mp3",
+            // "https://thanhji123.github.io/profile/nhac/em_dong_y.mp3",
+            // "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3",
             // "https://www.chosic.com/wp-content/uploads/2021/07/Beautiful-Piano.mp3", // Link dự phòng ổn định
             // "https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3"
         ];
@@ -956,6 +1189,114 @@
                 anim();
             }
         });
+
+        // .flower1 {
+        //             width: 500px;
+        //             height: 500px;
+        //             top: -70px;
+        //             left: -100px;
+        //             transform: rotate(180deg);
+        //         }
+
+        //         .flower2 {
+        //             width: 400px;
+        //             height: 400px;
+        //             top: 450px;
+        //             right: -50px;
+        //             transform: rotate(-10deg);
+        //             z-index: 0;
+        //         }
+
+        //         .flower3 {
+        //             width: 300px;
+        //             height: 300px;
+        //             top: 2400px;
+        //             right: -50px;
+        //             transform: rotate(-80deg);
+        //             z-index: 0;
+        //         }
+
+        //         .flower4 {
+        //             width: 500px;
+        //             height: 500px;
+        //             top: 3000px;
+        //             left: -50px;
+        //             transform: scaleX(-1) rotate(-30deg);
+        //             z-index: 0;
+        //         }
+
+        //         .flower5 {
+        //             width: 500px;
+        //             height: 500px;
+        //             top: 3600px;
+        //             right: -100px;
+        //             transform: scaleX(-1) rotate(90deg);
+        //             z-index: 0;
+        //         }
+
+        //         .flower6 {
+        //             width: 500px;
+        //             height: 500px;
+        //             top: 4500px;
+        //             left: -70px;
+        //             transform: scaleX(-1) rotate(0deg);
+        //             z-index: 0;
+        //         }
+
+        //         @media (max-width: 600px) {
+        //             .flower1 {
+        //                 width: 300px;
+        //                 height: 300px;
+        //                 top: -50px;
+        //                 left: -30px;
+        //             }
+
+        //             .flower2 {
+        //                 width: 300px;
+        //                 height: 300px;
+        //                 top: 530px;
+        //                 right: -50px;
+        //                 transform: rotate(0deg);
+        //                 z-index: 0;
+        //             }
+
+        //             .flower3 {
+        //                 width: 250px;
+        //                 height: 250px;
+        //                 top: 2150px;
+        //                 right: -55px;
+        //                 transform: rotate(-50deg);
+        //                 z-index: 0;
+        //             }
+
+        //             .flower4 {
+        //                 width: 500px;
+        //                 height: 500px;
+        //                 top: 2500px;
+        //                 left: -50px;
+        //                 transform: scaleX(-1) rotate(-30deg);
+        //                 z-index: 0;
+        //             }
+
+        //             .flower5 {
+        //                 width: 220px;
+        //                 height: 220px;
+        //                 top: 3450px;
+        //                 right: -50px;
+        //                 transform: scaleX(-1) rotate(100deg);
+        //                 z-index: 0;
+        //             }
+
+        //             .flower6 {
+        //                 width: 500px;
+        //                 height: 500px;
+        //                 top: 4090px;
+        //                 left: -75px;
+        //                 transform: scaleX(-1) rotate(-20deg);
+        //                 z-index: 0;
+        //             }
+        //         }
+
     </script>
 </body>
 
